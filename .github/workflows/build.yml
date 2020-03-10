@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to S3
       run: |
         # aws s3 sync ./build/ ${{ secrets.S3_BUCKET }}
-        echo hi ${{ github.event_name }} ${{ toJson(github.event) }}
+        echo hi ${{ github.event }}
 
   # This workflow contains a single job called "build"
   build:
