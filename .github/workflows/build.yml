@@ -43,4 +43,4 @@ jobs:
     # Runs a single command using the runners shell
     - name: Create deploy button
       run: |
-        curl --silent --output /dev/null --show-error --fail -X POST -H 'Accept: application/vnd.github.antiope-preview+json' -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -H 'Content-Type: application/json' --data '{"name":"deploy","head_sha":${{ toJson(github.sha) }},"status":"queued","actions":[{"label":"Deploy to S3 label","identifier":"deploy","description":"Deploy to S3"}]}' 'https://api.github.com/repos/${{ github.repository }}/check-runs'
+        curl --silent --output /dev/null --show-error --fail -X POST -H 'Accept: application/vnd.github.antiope-preview+json' -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -H 'Content-Type: application/json' --data '{"name":"deploy","head_sha":${{ toJson(github.sha) }},"status":"completed","conclusion":"neutral","output":{"title":"Deploy to s3 output","summary":"deploys to s3 alright"},"actions":[{"label":"Deploy to S3 label","identifier":"deploy","description":"Deploy to S3"}]}' 'https://api.github.com/repos/${{ github.repository }}/check-runs'
