@@ -5,8 +5,10 @@ name: 'Prepare Deploy'
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
 on:
-  check_run:
-    types: [ rerequested, requested_action ]
+  check_suite: {}
+#    types: [ rerequested, completed ]
+  check_run: {}
+#    types: [ rerequested, requested_action ]
   push:
     branches: [ master ]
 
