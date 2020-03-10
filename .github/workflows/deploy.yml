@@ -12,7 +12,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   deploy:
-    if: github.event.requested_action.identifier == 'deploy'
+    # if: github.event.requested_action.identifier == 'deploy'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,5 +25,5 @@ jobs:
     - name: Deploy to S3
       run: |
         # aws s3 sync ./build/ ${{ secrets.S3_BUCKET }}
-        echo hi
+        echo hi ${{ github.event.requested_action.identifier }} ${{ github.event.requested_action.identifier == 'deploy' }}
         
